@@ -1,0 +1,23 @@
+{
+  "name": "bromelia",
+  "version": "0.0.1",
+  "description": "a lush UI library for Web Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danmascena/bromelia.git"
+  },
+  "keywords": [
+    "WebComponents",
+    "UI"
+  ],
+  "author": "Daniel Mascena",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danmascena/bromelia/issues"
+  },
+  "homepage": "https://github.com/danmascena/bromelia#readme"
+}
