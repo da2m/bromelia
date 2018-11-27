@@ -1,8 +1,7 @@
-
 const templateProgressBar = document.createElement('template');
 templateProgressBar.innerHTML = `
-<style>
-.progress-component {
+    <style>
+        .progress-component {
             background-color: ghostwhite;
             background: -webkit-linear-gradient(#A9F1DF 0%, #FFBBBB 100%);
             background: -moz-linear-gradient(#A9F1DF 0%, #FFBBBB 100%);
@@ -93,7 +92,7 @@ color: #c3a60a;
             background: -moz-linear-gradient(black, gray);
             background: -o-linear-gradient(black, gray);
             background: linear-gradient(black, gray);
-            animation: progress-animation 1.5s ease 2s 1 reverse paused;
+            animation: progress-animation 1.5s ease 2s 1 reverse;
             transition: background linear 1s;
             position: absolute;
             padding-left: 5px;
@@ -134,10 +133,6 @@ color: #c3a60a;
         .progress-widget.js .progress-content:before {
         	background-color: gold;
         }
-        .skills-content.from-right .progress-content:after {
-            animation-play-state: running;
-        }
-        
         @keyframes changing-background {
             from {
                 transform: translate(100%);
@@ -155,44 +150,44 @@ color: #c3a60a;
                 transform: translateX(100%);
             }
         }
-        </style>
-                         <div class="progress-component" role="group">
-                                <div class="progress-widget css3" role="progressbar">
-                                    <label>CSS3</label>
-                                    <div class="progress-box">
-                                        <div class="progress-content" aria-label="80%"></div>
-                                    </div>
-                                    <progress value="80" max="100" hidden aria-hidden="true">80%</progress>
-                                </div>
-                                
-                                <div class="progress-widget html5" role="progressbar">
-                                    <label>HTML5</label>
-                                    <div class="progress-box">
-                                        <div class="progress-content" aria-label="70%"></div>
-                                    </div>
-                                    <progress value="70" max="100" hidden aria-hidden="true">70%</progress>
-                                </div>
-                                
-                                <div class="progress-widget js" role="progressbar">
-                                    <label>JavaScript</label>
-                                    <div class="progress-box">
-                                        <div class="progress-content" aria-label="75%"></div>
-                                    </div>
-                                    <progress value="75" max="100" hidden aria-hidden="true">75%</progress>
-                                </div>
-                            </div>
+    </style>
+
+    <div class="progress-component" role="group">
+        <div class="progress-widget css3" role="progressbar">
+            <label>CSS3</label>
+            <div class="progress-box">
+                <div class="progress-content" aria-label="80%"></div>
+            </div>
+            <progress value="80" max="100" hidden aria-hidden="true">80%</progress>
+        </div>
+        
+        <div class="progress-widget html5" role="progressbar">
+            <label>HTML5</label>
+            <div class="progress-box">
+                <div class="progress-content" aria-label="70%"></div>
+            </div>
+            <progress value="70" max="100" hidden aria-hidden="true">70%</progress>
+        </div>
+        
+        <div class="progress-widget js" role="progressbar">
+            <label>JavaScript</label>
+            <div class="progress-box">
+                <div class="progress-content" aria-label="75%"></div>
+            </div>
+            <progress value="75" max="100" hidden aria-hidden="true">75%</progress>
+        </div>
+    </div>
 `;
 
 class ProgressBar extends HTMLElement {
     constructor() {
         super();
-        this._root = this.attachShadow({ 'mode': 'open' });
+        //this._root = this.attachShadow({'mode': 'open'});
     }
 
     connectedCallback() {
         console.log('Progress Bar added to the DOM');
-        this._root.appendChild(templateProgressBar.content.cloneNode(true));
-        
+        this.appendChild(templateProgressBar.content.cloneNode(true));
     }
 
     disconnectedCallback() {
