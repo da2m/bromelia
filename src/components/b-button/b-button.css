@@ -1,0 +1,17 @@
+:host {
+  display: inline-block;
+  margin: 1rem;
+}
+
+button.b-primary {
+  background-color: #0000ee;
+  color: whitesmoke;
+  padding: .5em 1em;
+  border-radius: .5em;
+  box-sizing: border-box;
+}
+
+button.b-primary:focus {
+  outline: none;
+  box-shadow: inset 0 0 0px 2px #d00;
+}

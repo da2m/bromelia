@@ -1,23 +1,28 @@
 {
   "name": "bromelia",
   "version": "0.0.1",
-  "description": "a lush UI library for Web Components",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/danmascena/bromelia.git"
-  },
-  "keywords": [
-    "WebComponents",
-    "UI"
+  "description": "A lush UI library for Web Components",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/bromelia/bromelia.js",
+  "files": [
+    "dist/",
+    "loader/"
   ],
-  "author": "Daniel Mascena",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/danmascena/bromelia/issues"
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
   },
-  "homepage": "https://github.com/danmascena/bromelia#readme"
+  "devDependencies": {
+    "@stencil/core": "^1.12.2"
+  },
+  "license": "MIT"
 }
